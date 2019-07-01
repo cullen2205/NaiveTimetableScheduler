@@ -26,7 +26,8 @@ namespace Core.IO
 
             foreach (string subjectText in subjectTexts)
             {
-                subjects.Add(new Subject(subjectText));
+                if(!string.IsNullOrEmpty(subjectText))
+                    subjects.Add(new Subject(subjectText));
             }
             return subjects;
         }

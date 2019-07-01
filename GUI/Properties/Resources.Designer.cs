@@ -223,6 +223,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_select_all_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-select-all-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_select_none_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-select-none-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_subtract_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-subtract-32", resourceCulture);

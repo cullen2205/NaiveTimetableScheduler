@@ -35,6 +35,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setTimeLimitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limitSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,28 +82,29 @@
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.importToolStripMenuItem.Text = "Nhập từ tệp";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportToolStripMenuItem.Text = "Xuất ra tệp";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exitToolStripMenuItem.Text = "Thoát";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // functionToolStripMenuItem
             // 
             this.functionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setTimeLimitToolStripMenuItem});
+            this.setTimeLimitToolStripMenuItem,
+            this.limitSubjectToolStripMenuItem});
             this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
             this.functionToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.functionToolStripMenuItem.Text = "Chức năng";
@@ -110,9 +112,16 @@
             // setTimeLimitToolStripMenuItem
             // 
             this.setTimeLimitToolStripMenuItem.Name = "setTimeLimitToolStripMenuItem";
-            this.setTimeLimitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTimeLimitToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.setTimeLimitToolStripMenuItem.Text = "Giới hạn thời gian";
             this.setTimeLimitToolStripMenuItem.Click += new System.EventHandler(this.setTimeLimitToolStripMenuItem_Click);
+            // 
+            // limitSubjectToolStripMenuItem
+            // 
+            this.limitSubjectToolStripMenuItem.Name = "limitSubjectToolStripMenuItem";
+            this.limitSubjectToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.limitSubjectToolStripMenuItem.Text = "Giới hạn môn học";
+            this.limitSubjectToolStripMenuItem.Click += new System.EventHandler(this.limitSubjectToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -151,7 +160,7 @@
             this.groupBox1.Size = new System.Drawing.Size(301, 352);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách môn học";
+            this.groupBox1.Text = "Danh sách lớp môn học";
             // 
             // DeleteButton
             // 
@@ -188,9 +197,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(25, 241);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.Size = new System.Drawing.Size(132, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Các môn bắt buộc";
+            this.label2.Text = "Các lớp môn học bắt buộc";
             // 
             // CompulsorySubjectsCheckedListBox
             // 
@@ -205,13 +214,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(120, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Tất cả các môn";
+            this.label1.Text = "Tất cả các lớp môn học";
             // 
             // SubjectsCheckedListBox
             // 
             this.SubjectsCheckedListBox.FormattingEnabled = true;
+            this.SubjectsCheckedListBox.HorizontalScrollbar = true;
             this.SubjectsCheckedListBox.Location = new System.Drawing.Point(28, 47);
             this.SubjectsCheckedListBox.Name = "SubjectsCheckedListBox";
             this.SubjectsCheckedListBox.Size = new System.Drawing.Size(238, 139);
@@ -311,6 +321,7 @@
         private System.Windows.Forms.Button MarkCompulsoryButton;
         private System.Windows.Forms.Button ResetSubjectsButton;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.ToolStripMenuItem limitSubjectToolStripMenuItem;
     }
 }
 

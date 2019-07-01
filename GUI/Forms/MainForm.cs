@@ -18,13 +18,15 @@ namespace GUI
     {
         string inputPath = "";
         ResultForm resultForm = new ResultForm();
-        TimeLimitForm limitForm = new TimeLimitForm();
+        TimeLimitForm timeLimitForm = new TimeLimitForm();
+        SubjectLimitForm subjectLimitForm = new SubjectLimitForm();
 
         public MainForm()
         {
             InitializeComponent();
             resultForm.FormClosing += FormUtilities.HideInsteadOfClose;
             //limitForm.FormClosing += FormUtilities.HideInsteadOfClose;
+            subjectLimitForm.FormClosing += FormUtilities.HideInsteadOfClose;
         }
 
         private void FillWithAllSubjects()
@@ -47,6 +49,12 @@ namespace GUI
                     SubjectsCheckedListBox,
                     Core.IO.Input.GetSubjectsFromFile(inputPath)
                 );
+
+                subjectLimitForm
+                    .FillSubjects
+                    (
+                        SubjectsCheckedListBox.Items.Cast<Subject>().ToList()
+                    );
             }
             catch(Exception e)
             {
@@ -77,13 +85,7 @@ namespace GUI
             List<Subject> compulsorySubjects = SubjectsCheckedListBox
                 .CheckedItems.OfType<Subject>().ToList();
             var intersectPairs = BlackBox.IntersectPairs(compulsorySubjects);
-
-            /*if (!BlackBox.HasDifferentSubjectNames(compulsorySubjects))
-                //two or more subjects with the same name are selected
-            {
-                MessageBox.Show("Không thể chọn môn !");
-            }
-            else */
+            
             if (intersectPairs.Count > 0)
             {
                 string message = "Các lớp sau bị trùng: " + Environment.NewLine;
@@ -151,8 +153,9 @@ namespace GUI
                     BlackBox.SubjectsNotIntersectConditions
                     (
                         SubjectsCheckedListBox.Items.Cast<Subject>().ToList(),
-                        limitForm.DeniedPeriods
-                    )
+                        timeLimitForm.DeniedPeriods
+                    ).Where(s => subjectLimitForm.GetSelectedSubjects().Contains(s.Name))
+                    .ToList()
                 )
             );
 
@@ -180,7 +183,7 @@ namespace GUI
 
         private void setTimeLimitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            limitForm.Show();
+            timeLimitForm.Show();
         }
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,6 +227,11 @@ namespace GUI
                 TextStorage.GetMessage("MSG_008_NOT_UPDATED"),
                 TextStorage.GetLabel("LBL_002_WARN")
             );
+        }
+
+        private void limitSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            subjectLimitForm.Show();
         }
     }
 }
