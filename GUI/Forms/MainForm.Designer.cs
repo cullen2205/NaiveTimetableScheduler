@@ -52,6 +52,8 @@
             this.ExportFileButton = new System.Windows.Forms.Button();
             this.ImportFileButton = new System.Windows.Forms.Button();
             this.ImportFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.MainMenuStrip_.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,7 +67,7 @@
             this.helpToolStripMenuItem});
             this.MainMenuStrip_.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip_.Name = "MainMenuStrip_";
-            this.MainMenuStrip_.Size = new System.Drawing.Size(542, 24);
+            this.MainMenuStrip_.Size = new System.Drawing.Size(737, 24);
             this.MainMenuStrip_.TabIndex = 0;
             this.MainMenuStrip_.Text = "menuStrip1";
             // 
@@ -155,7 +157,7 @@
             this.groupBox1.Controls.Add(this.CompulsorySubjectsCheckedListBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.SubjectsCheckedListBox);
-            this.groupBox1.Location = new System.Drawing.Point(199, 44);
+            this.groupBox1.Location = new System.Drawing.Point(415, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(301, 352);
             this.groupBox1.TabIndex = 2;
@@ -230,12 +232,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.ProcessButton);
             this.groupBox2.Controls.Add(this.ExportFileButton);
             this.groupBox2.Controls.Add(this.ImportFileButton);
             this.groupBox2.Location = new System.Drawing.Point(26, 44);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(139, 352);
+            this.groupBox2.Size = new System.Drawing.Size(359, 352);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Làm việc";
@@ -243,9 +247,9 @@
             // ProcessButton
             // 
             this.ProcessButton.Image = global::GUI.Properties.Resources.icons8_process_32;
-            this.ProcessButton.Location = new System.Drawing.Point(30, 139);
+            this.ProcessButton.Location = new System.Drawing.Point(30, 178);
             this.ProcessButton.Name = "ProcessButton";
-            this.ProcessButton.Size = new System.Drawing.Size(75, 75);
+            this.ProcessButton.Size = new System.Drawing.Size(85, 75);
             this.ProcessButton.TabIndex = 2;
             this.ProcessButton.Text = "Xử lý";
             this.ProcessButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -255,9 +259,9 @@
             // ExportFileButton
             // 
             this.ExportFileButton.Image = global::GUI.Properties.Resources.icons8_save_as_32;
-            this.ExportFileButton.Location = new System.Drawing.Point(30, 249);
+            this.ExportFileButton.Location = new System.Drawing.Point(30, 259);
             this.ExportFileButton.Name = "ExportFileButton";
-            this.ExportFileButton.Size = new System.Drawing.Size(75, 75);
+            this.ExportFileButton.Size = new System.Drawing.Size(85, 75);
             this.ExportFileButton.TabIndex = 1;
             this.ExportFileButton.Text = "Xuất ra tệp";
             this.ExportFileButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -267,20 +271,41 @@
             // ImportFileButton
             // 
             this.ImportFileButton.Image = global::GUI.Properties.Resources.icons8_add_file_32;
-            this.ImportFileButton.Location = new System.Drawing.Point(30, 31);
+            this.ImportFileButton.Location = new System.Drawing.Point(30, 16);
             this.ImportFileButton.Name = "ImportFileButton";
-            this.ImportFileButton.Size = new System.Drawing.Size(75, 75);
+            this.ImportFileButton.Size = new System.Drawing.Size(85, 75);
             this.ImportFileButton.TabIndex = 0;
             this.ImportFileButton.Text = "Nhập từ tệp";
             this.ImportFileButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ImportFileButton.UseVisualStyleBackColor = true;
             this.ImportFileButton.Click += new System.EventHandler(this.ImportFileButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::GUI.Properties.Resources.icons8_add_file_32;
+            this.button1.Location = new System.Drawing.Point(30, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 75);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Nhập trực tiếp";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(122, 16);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(231, 318);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 425);
+            this.ClientSize = new System.Drawing.Size(737, 426);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.MainMenuStrip_);
@@ -322,6 +347,8 @@
         private System.Windows.Forms.Button ResetSubjectsButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.ToolStripMenuItem limitSubjectToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
